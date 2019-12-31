@@ -19,6 +19,8 @@ legal = "Copyright (C) 2012-2019 by Autodesk, Inc.";
 certificationLevel = 2;
 minimumRevision = 40783;
 
+debugMode = true;
+
 longDescription = "Generic Laser post-processor for Carbide 3D (Grbl).";
 
 extension = "nc";
@@ -336,6 +338,45 @@ function onRadiusCompensation() {
   pendingRadiusCompensation = radiusCompensation;
 }
 
+function onMovement(movement) {
+  switch (movement) {
+    case MOVEMENT_CUTTING:
+      // writeComment("cutting movement");
+      if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
+        writeBlock(mFormat.format(3), sOutput.format(power));
+      }
+      return;
+    // case MOVEMENT_LEAD_IN:
+    //   writeComment("lead-in movement");
+    //   if (rpmFormat.areDifferent(0, sOutput.getCurrent())) {
+    //     writeBlock(mFormat.format(5), sOutput.format(0));
+    //   }
+  
+    //   return;
+    // case MOVEMENT_LEAD_OUT:
+    //   writeComment("lead-out movement");
+    //   if (rpmFormat.areDifferent(0, sOutput.getCurrent())) {
+    //     writeBlock(mFormat.format(5), sOutput.format(0));
+    //   }
+  
+    //   return;
+    // case MOVEMENT_PLUNGE:
+    //   writeComment("plunge movement");
+    //   return;
+    // case MOVEMENT_RAPID:
+    //   writeComment("rapid movement");
+    //   return;
+    default:
+      // writeComment("other movement");
+      if (rpmFormat.areDifferent(0, sOutput.getCurrent())) {
+        writeBlock(mFormat.format(5), sOutput.format(0));
+      }
+  
+      return;
+  }
+  
+}
+
 function onRapid(_x, _y, _z) {
   var x = xOutput.format(_x);
   var y = yOutput.format(_y);
@@ -347,15 +388,13 @@ function onRapid(_x, _y, _z) {
     }
 
     // stop the laser
-    if (rpmFormat.areDifferent(0, sOutput.getCurrent())) {
-      writeBlock(mFormat.format(5), sOutput.format(0));
-    }
+    // if (rpmFormat.areDifferent(0, sOutput.getCurrent())) {
+    //   writeBlock(mFormat.format(5), sOutput.format(0));
+    // }
 
     // move
     writeBlock(gMotionModal.format(0), x, y, z);
     feedOutput.reset();
-
-    // we re-start the laser in the Linear/Circle and other functions, not here
   }
 }
 
@@ -376,9 +415,13 @@ function onLinear(_x, _y, _z, feed) {
       return;
     } else {
       // start the laser if needed
-      if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
-        writeBlock(mFormat.format(3), sOutput.format(power));
-      }
+      // if ((currentSection.getMovements() & (1 << MOVEMENT_CUTTING)) && rpmFormat.areDifferent(power, sOutput.getCurrent())) {
+        // cutting move is present in section
+        // writeBlock(mFormat.format(3), sOutput.format(power));
+      // }
+      // if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
+      //   writeBlock(mFormat.format(3), sOutput.format(power));
+      // }
       writeBlock(gMotionModal.format(1), x, y, z, f);
     }
   } else if (f) {
@@ -386,9 +429,9 @@ function onLinear(_x, _y, _z, feed) {
       feedOutput.reset(); // force feed on next line
     } else {
       // start the laser if needed
-      if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
-        writeBlock(mFormat.format(3), sOutput.format(power));
-      }
+      // if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
+      //   writeBlock(mFormat.format(3), sOutput.format(power));
+      // }
       writeBlock(gMotionModal.format(1), f);
     }
   }
@@ -484,9 +527,9 @@ function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
   circle = new CircularData(getCircularPlane(), new Vector(cx, cy, cz), new Vector(x, y, z));
 
   // turn the laser on
-  if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
-    writeBlock(mFormat.format(3), sOutput.format(power));
-  }
+  // if (rpmFormat.areDifferent(power, sOutput.getCurrent())) {
+  //   writeBlock(mFormat.format(3), sOutput.format(power));
+  // }
 
   if (isFullCircle()) {
     if (isHelical()) {
