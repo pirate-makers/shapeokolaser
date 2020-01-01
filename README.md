@@ -9,8 +9,17 @@ You can also import it to your Cloud Posts, and I recommend that.
 
 Note that this Post Processor **DOES NOT** output Z axis movements. Put your laser to the right height and that's it.
 
-### Warning
-This post is really experimental and haven't been tested for production use. Please, test it on a scrap piece and *PUT YOUR EYEWEAR PROTECTION ON* !!
+### Warning / Disclamer
+
+Feel free to use/test at your own risk. We will not feel responsible for any hurt, death, fire, tool or material destruction resulting of the use of these files.
+Do it at your own risk. Better, don't use it if you don't feel comfortable. 
+
+**Alway use the protection equipments that is required, like laser googles**
+
+This Fusion360™ post is experimental and haven't been tested for production use. Please, test it on a scrap piece and *PUT YOUR EYEWEAR PROTECTION ON* !!
+It may change at any time, depeding on the results of you tests and your comments.
+
+Please feel free to open an Issue if you have any comment.
 
 ### Usage
 I have two workflows for now : 
@@ -64,4 +73,15 @@ You will end up with a Gcode (nc) file that you can import in your controler sof
 
 #### Laser burning
 This workflow is used when you want to create a black and white image, logo...
-TBD
+
+In the `Design` part of Fusion360, create a slight extrusion of your design. This is not mandatory but usually help the pre-processor. As the `post generator` does not handle Z-axis, it should not be an issue.
+
+Create a `3D -> Parallel` tool path. Select your 0.1 or 0.2mm tool. Set the `Spindle Speed` to the laser power you want (ex : 255 = full power if your CNC is set with $30=255). Also set your `Cutting Feedrate` to the speed you want.
+Select your shape in the `Geometry` tab. In the `Passes` tab, change the stepover. I usually make it a little less than the laser width (the tool you created). For example, if I use the 0.2mm tool, I will set the stepover to 0.19mm. This is a parameter you can play with depeding on your beam size.
+
+And that's it.
+Again, the post-processor do two things for you : 
+ - remove the Z-axis movements (so you don't care of Z lead-ins or outs)
+ - stop the laser during anything except cutting (like lead-in/out)
+
+More examples to come.
