@@ -1,5 +1,15 @@
-# shapeokolaser
+# Shapeokolaser
+
 Laser Post-processor and stuffs for ShapeOKO and Autodesk Fusion360 
+
+## Content : 
+
+* [Laser Post Processor](#carbide-3d-shapeoko-laser-post-processor)
+* [Tool Library](tools/f360-laser-tools.json)
+* [Usage](#Usage)
+  * [Cutting and Tracing](#laser-cutting-tracing)
+  * [Engraving (burning)](laser-burning)
+* [Tests](test/laser-power-speed)
 
 ## Carbide 3D (ShapeOKO) Laser Post Processor
 
@@ -10,6 +20,7 @@ You can also import it to your Cloud Posts, and I recommend that.
 Note that this Post Processor **DOES NOT** output Z axis movements. Put your laser to the right height and that's it.
 
 ### Warning / Disclamer
+
 
 Feel free to use/test at your own risk. We will not feel responsible for any hurt, death, fire, tool or material destruction resulting of the use of these files.
 Do it at your own risk. Better, don't use it if you don't feel comfortable. 

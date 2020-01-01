@@ -1,0 +1,185 @@
+{
+    "data": [
+        {
+            "BMC": "hss",
+            "description": "0.1mm laser tool",
+            "geometry": {
+                "CSP": false,
+                "DC": 0.1,
+                "HAND": true,
+                "LB": 60,
+                "LCF": 40,
+                "NOF": 3,
+                "OAL": 70,
+                "SFDM": 6.350000000000001,
+                "shoulder-length": 50
+            },
+            "guid": "416dcf09-9a22-4c56-beab-859985db27fe",
+            "last_modified": 1577922823981,
+            "post-process": {
+                "break-control": false,
+                "comment": "",
+                "diameter-offset": 1,
+                "length-offset": 1,
+                "live": true,
+                "manual-tool-change": false,
+                "number": 21,
+                "turret": 0
+            },
+            "product-id": "",
+            "product-link": "",
+            "reference_guid": "9db46748-c1d2-4da4-a1d0-bd4765864d01",
+            "start-values": {
+                "presets": [
+                    {
+                        "f_n": 0.066666666666667,
+                        "f_z": 0.066666666666667,
+                        "guid": "078fa4c8-23ba-423a-9708-651f124db6a7",
+                        "n": 5000,
+                        "n_ramp": 5000,
+                        "name": "Default preset",
+                        "tool-coolant": "disabled",
+                        "use-stepdown": false,
+                        "use-stepover": false,
+                        "v_c": 1.5707963267949,
+                        "v_f": 1000,
+                        "v_f_leadIn": 1000,
+                        "v_f_leadOut": 1000,
+                        "v_f_plunge": 333.33333333333303,
+                        "v_f_ramp": 333.33333333333303
+                    }
+                ]
+            },
+            "type": "ball end mill",
+            "unit": "millimeters",
+            "vendor": ""
+        },
+        {
+            "description": "laser 0.1mm",
+            "geometry": {
+                "CW": 0.1,
+                "JET_HEAD_CLEARANCE": 1,
+                "JET_NOZZLE_DIAMETER": 0.1
+            },
+            "guid": "62f94825-2f8b-4c1d-8e96-85cc780dd218",
+            "holder": {
+                "description": "Laser Cutter Head",
+                "guid": "48b000c0-b7b5-438c-8a01-5c03f563a7d0",
+                "last_modified": 1485790620819,
+                "product-id": "",
+                "segments": [
+                    {
+                        "height": 4.9657,
+                        "lower-diameter": 4.775200000000001,
+                        "upper-diameter": 19.253200000000003
+                    },
+                    {
+                        "height": 1.524,
+                        "lower-diameter": 19.253200000000003,
+                        "upper-diameter": 19.253200000000003
+                    },
+                    {
+                        "height": 2.54,
+                        "lower-diameter": 12.700000000000001,
+                        "upper-diameter": 12.700000000000001
+                    },
+                    {
+                        "height": 17.386300000000002,
+                        "lower-diameter": 25.400000000000002,
+                        "upper-diameter": 31.750000000000004
+                    },
+                    {
+                        "height": 25.400000000000002,
+                        "lower-diameter": 31.750000000000004,
+                        "upper-diameter": 31.750000000000004
+                    }
+                ],
+                "type": "holder",
+                "unit": "millimeters",
+                "vendor": ""
+            },
+            "last_modified": 1577922813729,
+            "post-process": {
+                "comment": "",
+                "diameter-offset": 1,
+                "length-offset": 1,
+                "manual-tool-change": false,
+                "number": 23
+            },
+            "product-id": "",
+            "product-link": "",
+            "reference_guid": "731f638c-14ed-438f-a2fc-243cab919890",
+            "start-values": {
+                "presets": [
+                    {
+                        "description": "",
+                        "guid": "a1462ac1-5d4d-32b3-403b-60bb7559ffbc",
+                        "machineQualityControl": "manual",
+                        "name": "Default Preset",
+                        "v_f": 600,
+                        "v_f_leadIn": 1000,
+                        "v_f_leadOut": 1000
+                    }
+                ]
+            },
+            "type": "laser cutter",
+            "unit": "millimeters",
+            "vendor": ""
+        },
+        {
+            "BMC": "hss",
+            "description": "0.2mm laser tool",
+            "geometry": {
+                "CSP": false,
+                "DC": 0.2,
+                "HAND": true,
+                "LB": 60,
+                "LCF": 40,
+                "NOF": 3,
+                "OAL": 70,
+                "SFDM": 6.350000000000001,
+                "shoulder-length": 50
+            },
+            "guid": "a3f98703-e302-47ce-8027-1645aca4dc2c",
+            "last_modified": 1577922838128,
+            "post-process": {
+                "break-control": false,
+                "comment": "",
+                "diameter-offset": 1,
+                "length-offset": 1,
+                "live": true,
+                "manual-tool-change": false,
+                "number": 22,
+                "turret": 0
+            },
+            "product-id": "",
+            "product-link": "",
+            "reference_guid": "23aab9e1-7fb5-422a-bff1-c1f4fa2461ed",
+            "start-values": {
+                "presets": [
+                    {
+                        "f_n": 0.066666666666667,
+                        "f_z": 0.066666666666667,
+                        "guid": "078fa4c8-23ba-423a-9708-651f124db6a7",
+                        "n": 5000,
+                        "n_ramp": 5000,
+                        "name": "Default preset",
+                        "tool-coolant": "disabled",
+                        "use-stepdown": false,
+                        "use-stepover": false,
+                        "v_c": 3.14159265358979,
+                        "v_f": 1000,
+                        "v_f_leadIn": 1000,
+                        "v_f_leadOut": 1000,
+                        "v_f_plunge": 333.33333333333303,
+                        "v_f_ramp": 333.33333333333303
+                    }
+                ]
+            },
+            "type": "ball end mill",
+            "unit": "millimeters",
+            "vendor": ""
+        }
+    ],
+    "version": 1
+}
